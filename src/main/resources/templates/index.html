@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Main page</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <style>
+    body {
+      background-image: url("/image/background.jpg");
+      background-repeat: no-repeat;
+      background-size: auto;
+    }
+    a{
+      color: #1c7430;
+      text-decoration:none;
+    }
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-dark bg-dark">
+  <a href="/snake/add" class="btn btn-success">Add Snake</a>
+  <a href="/snake/all" class="btn btn-success">Snake list</a>
+  <a href="/weight/add" class="btn btn-success">Add weight</a>
+  <a href="/weight/all" class="btn btn-success">Weight list</a>
+  <a href="/food/add" class="btn btn-success">Add food</a>
+  <a href="/food/all" class="btn btn-success">Food list</a>
+  <a href="/feeding/add" class="btn btn-success">Add feeding</a>
+  <a href="/feeding/all" class="btn btn-success">Feeding list</a>
+  <form class="form-inline" method="post" action="/snake/search">
+    <input class="form-control mr-sm-2" type="text" placeholder="Search snake" aria-label="Search">
+    <button class="btn btn-success" type="submit">Search</button>
+  </form>
+</nav>
+
+<!--<div class="container">-->
+  <!--<div class="row">-->
+    <!--<div class="col-sm">-->
+      <!--<table class="table">-->
+        <!--<thead class="thead-dark">-->
+        <!--<tr>-->
+          <!--<th scope="col">Breeding number</th>-->
+          <!--<th scope="col">Species</th>-->
+          <!--<th scope="col">Morph</th>-->
+          <!--<th scope="col">Sex</th>-->
+          <!--<th scope="col">Date of birth</th>-->
+          <!--<th scope="col" >Action</th>-->
+        <!--</tr>-->
+        <!--</thead>-->
+        <!--<tbody>-->
+        <!--<tr th:each="snake, iterStat : ${snakeList}">-->
+          <!--<td th:text="${snake.breedingNumber}"></td>-->
+          <!--<td th:text="${snake.species}"></td>-->
+          <!--<td th:text="${snake.morph}"></td>-->
+          <!--<td th:text="${snake.sex}"></td>-->
+          <!--<td th:text="${snake.dateOfBirth}"></td>-->
+          <!--<td>-->
+            <!--<a th:href="@{'/snake/' + ${snake.id} + '/edit'}">Edit</a>-->
+            <!--<a th:href="@{'/snake/' + ${snake.id} + '/delete'}">Delete</a>-->
+          <!--</td>-->
+        <!--</tr>-->
+        <!--</tbody>-->
+      <!--</table>-->
+
+    <!--</div>-->
+    <!--<div class="col-sm">-->
+      <!--<table class="table">-->
+        <!--<thead class="thead-dark">-->
+        <!--<tr>-->
+          <!--<th scope="col">Type</th>-->
+          <!--<th scope="col">Size</th>-->
+          <!--<th scope="col">Action</th>-->
+        <!--</tr>-->
+        <!--</thead>-->
+        <!--<tbody>-->
+        <!--<tr th:each="food, iterStat : ${foodList}">-->
+          <!--<td th:text="${food.type}"></td>-->
+          <!--<td th:text="${food.size}"></td>-->
+          <!--<td>-->
+            <!--<a th:href="@{'/food/' + ${food.id} + '/edit'}">Edit</a>-->
+            <!--<a th:href="@{'/food/' + ${food.id} + '/delete'}">Delete</a>-->
+          <!--</td>-->
+        <!--</tr>-->
+        <!--</tbody>-->
+      <!--</table>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+
+  <!--<div class="container">-->
+    <!--<table class="table">-->
+      <!--<thead class="thead-dark">-->
+      <!--<tr>-->
+        <!--<th scope="col">Snake</th>-->
+        <!--<th scope="col">Food type</th>-->
+        <!--<th scope="col">Food size</th>-->
+        <!--<th scope="col">Quantity</th>-->
+        <!--<th scope="col">Date</th>-->
+        <!--<th scope="col">Note</th>-->
+        <!--<th scope="col">Action</th>-->
+      <!--</tr>-->
+      <!--</thead>-->
+      <!--<tbody>-->
+      <!--<tr th:each="feeding, iterStat : ${feedingList}">-->
+        <!--<td th:text="${feeding.snake.morph}"></td>-->
+        <!--<td th:text="${feeding.food.type}"></td>feedingList.html-->
+        <!--<td th:text="${feeding.food.size}"></td>-->
+        <!--<td th:text="${feeding.quantity}"></td>-->
+        <!--<td th:text="${feeding.date}"></td>-->
+        <!--<td th:text="${feeding.note}"></td>-->
+        <!--<td>-->
+          <!--<a th:href="@{'/feeding/' + ${feeding.id} + '/edit'}">Edit</a>-->
+          <!--<a th:href="@{'/feeding/' + ${feeding.id} + '/delete'}">Delete</a>-->
+        <!--</td>-->
+      <!--</tr>-->
+      <!--</tbody>-->
+    <!--</table>-->
+  <!--</div>-->
+<!--</div>-->
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+</body>
+</html>
